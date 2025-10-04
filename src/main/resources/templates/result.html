@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Wynik – Wilks Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 40px auto;
+      background: #f8f9fa;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1 { text-align: center; }
+    .result {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+      margin-top: 20px;
+    }
+    a {
+      display: inline-block;
+      margin-top: 20px;
+      color: #007bff;
+      text-decoration: none;
+    }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+<h1>Wynik Kalkulatora Wilksa</h1>
+
+<div class="result" th:if="${result != null}">
+  <p>Twój wynik Wilks:</p>
+  <h2 th:text="${#numbers.formatDecimal(result, 2, 2)}">0.00</h2>
+  <p>pkt</p>
+</div>
+
+<div class="result" th:if="${requiredLift != null}">
+  <p>Aby wygrać, drugi zawodnik musi podnieść:</p>
+  <h2 th:text="${#numbers.formatDecimal(requiredLift, 2, 2)}">0.00</h2>
+  <p>kg</p>
+</div>
+
+<div style="text-align:center;">
+  <a href="/">← Powrót do kalkulatora</a>
+</div>
+
+</body>
+</html>

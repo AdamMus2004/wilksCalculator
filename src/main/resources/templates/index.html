@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Kalkulator Wilksa</title>
+</head>
+<body>
+<h1>Kalkulator Wilksa</h1>
+
+<h2>Oblicz Wilksa</h2>
+<form action="/calculate" method="post">
+  <label>Płeć:</label>
+  <select name="gender">
+    <option value="MALE">Mężczyzna</option>
+    <option value="FEMALE">Kobieta</option>
+  </select><br>
+  <label>Waga zawodnika (kg):</label>
+  <input type="number" step="0.1" name="bodyWeight"><br>
+  <label>Wynik (kg):</label>
+  <input type="number" step="0.1" name="liftedWeight"><br>
+  <button type="submit">Oblicz</button>
+</form>
+
+<h2>Ile trzeba podnieść, żeby wygrać?</h2>
+<form action="/compare" method="post">
+  <h3>Zawodnik 1</h3>
+  <label>Płeć:</label>
+  <select name="gender1">
+    <option value="MALE">Mężczyzna</option>
+    <option value="FEMALE">Kobieta</option>
+  </select><br>
+  <label>Waga (kg):</label>
+  <input type="number" step="0.1" name="weight1"><br>
+  <label>Wynik (kg):</label>
+  <input type="number" step="0.1" name="result1"><br>
+
+  <h3>Zawodnik 2</h3>
+  <label>Płeć:</label>
+  <select name="gender2">
+    <option value="MALE">Mężczyzna</option>
+    <option value="FEMALE">Kobieta</option>
+  </select><br>
+  <label>Waga (kg):</label>
+  <input type="number" step="0.1" name="weight2"><br>
+
+  <button type="submit">Oblicz ile podnieść</button>
+</form>
+</body>
+</html>
